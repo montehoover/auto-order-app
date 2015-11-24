@@ -9,9 +9,7 @@
 	</head>
 	<body>
 		<div class="page-header">
-			{% if user.is_authenticated %}
 		  	<a href="{% url "order_new" %}" class="top-menu"><span class="glyphicon glyphicon-plus"></a>
-		  	{% endif %}
 		  	<h1><a href="/">Amazon Auto Orderer</a></h1>
 		</div>
 		<div class="content container">
