@@ -21,7 +21,7 @@ def order_new(request):
 		form = OrderForm(request.POST)
 		if form.is_valid():
 			order = form.save(commit=False)
-			order.customer = request.user
+			# order.customer = request.user
 			order.save()
 			return redirect('orderer.views.order_detail', pk=order.pk)
 	# Else you just arrived at the form page and start with a blank form
@@ -39,7 +39,7 @@ def order_edit(request, pk):
 		form = OrderForm(request.POST, instance=order)
 		if form.is_valid():
 			order = form.save(commit=False)
-			order.customer = request.user
+			# order.customer = request.user
 			order.save()
 			return redirect('orderer.views.order_detail', pk=order.pk)
 	# Else you just arrived at the form page and will begin to edit the
