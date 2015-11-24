@@ -1,0 +1,14 @@
+{% extends "orderer/base.html" %}
+
+{% block content %}
+		<div class="order">
+			{% if order.start_date %}
+				<div class="date">
+		  			{{ order.start_date }}
+				</div>
+			{% endif %}
+			<a class="btn btn-default" href="{% url 'order_edit' pk=order.pk %}"><span class="glyphicon glyphicon-pencil"></span></a>
+			<h1>{{ order.amazonid }}</h1>
+			<p>Frequency: Order every {{ order.frequency_qty }} {{ order.frequency_unit }}</p>
+		</div>
+{% endblock %}

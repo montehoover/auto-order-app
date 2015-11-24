@@ -1,0 +1,14 @@
+{% extends "orderer/base.html" %}
+
+{% block content %}
+	<h2>Your current scheduled orders:</h2> 
+	{% for order in orders %}
+		<div class="order">
+			<div class="date">
+	  			Start date: {{ order.start_date }}
+			</div>
+			<h3><a href="{% url "order_detail" pk=order.pk %}">{{ order.amazonid }}</a></h3>
+			<p>Frequency: Order every {{ order.frequency_qty }} {{ order.frequency_unit }}</p>
+		</div>
+	{% endfor %}
+{% endblock %}

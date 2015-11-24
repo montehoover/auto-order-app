@@ -1,0 +1,26 @@
+{% load staticfiles %}
+<html>
+	<head>
+		<title>Amazon Auto Orderer</title>
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" integrity="sha512-dTfge/zgoMYpP7QbHy4gWMEGsbsdZeCXz7irItjcC3sPUFtf0kuFbDz/ixG7ArTxmDjLXDmezHubeNikyKGVyQ==" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap-theme.min.css" integrity="sha384-aUGj/X2zp5rLCbBxumKTCw2Z50WgIr1vs/PFN4praOTvYXWlVyh2UtNUU0KAUhAX" crossorigin="anonymous">
+		<link href="<link href='https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+		<link rel="stylesheet" href="{% static "css/orderer.css" %}">
+	</head>
+	<body>
+		<div class="page-header">
+			{% if user.is_authenticated %}
+		  	<a href="{% url "order_new" %}" class="top-menu"><span class="glyphicon glyphicon-plus"></a>
+		  	{% endif %}
+		  	<h1><a href="/">Amazon Auto Orderer</a></h1>
+		</div>
+		<div class="content container">
+		  	<div class="row">
+		      	<div class="col-md-8">
+		      	{% block content %}
+		      	{% endblock %}
+		      	</div>
+		  	</div>
+		</div>
+	</body>
+</html>
