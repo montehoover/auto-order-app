@@ -1,11 +1,11 @@
 from django.db import models
 # from django.utils import timezone
 
-# A simple representation of a recuring order.  Each instance represents
+# A simple representation of a recurring order.  Each instance represents
 # a single product from amazon based on the amazonid.  The only modifications
 # possible are the quantity of the item to be bundled into a recurring order.
 # The user will specify when to receive the first shipment and then at what
-# intervals to recieve the item(s).
+# intervals to receive the item(s).
 class ScheduledOrder(models.Model):
 	# customer = models.ForeignKey('auth.User')
 	amazonid = models.CharField(max_length=200)
